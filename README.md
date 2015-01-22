@@ -1,8 +1,8 @@
 # Fire-Devil
 Data touch feelings => insight
--Swipe your feelz
--See your feelz
--Know your feelz
+- Swipe your feelz
+- See your feelz
+- Know your feelz
 
 ## Team
 
