@@ -1,0 +1,18 @@
+// To commit any changes to master, we will be stacking
+out branch_im_working_on on top of master and making it the
+new branch once conflicts have been resolved
+//if on another branch...
+$ git checkout master
+//update your master to remote master
+$ git pull --rebase origin master
+//go back to branch you hve been working on
+//[optional git fetch, if report that your branch is ahead of master by N commits]
+$ git checkout branch_im_working_on
+//co your on branhc
+$ git rebase master
+# .. Resolve any conflicts followed with and type... 
+`git rebase --continue
+#..then to move your master(ONLY AT THIS TIME SHOULD YOU USE MERGE)
+$ git checkout master
+$ git merge --ff-only branch_im_working_on
+
