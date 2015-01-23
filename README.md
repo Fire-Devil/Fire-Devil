@@ -6,10 +6,10 @@ Data touch feelings => insight
 
 ## Team
 
-  - __Product Owner__: Nick diablo fuego
-  - __Scrum Master__: Tole огонь дьявол (ogon' d'yavol)
-  - __Development Superhero__: Dan 火の悪魔 (Hi no akuma)
-  - __Development Superheroine__: Christine 화재 악마 (hwajae agma)
+  - __Product Owner__: Nick "[nsipplswezey](https://github.com/nsipplswezey)" diablo fuego
+  - __Scrum Master__: Tole "[tliber](https://github.com/tliber)" огонь дьявол (ogon' d'yavol)
+  - __Development Superhero__: Dan "[teachrdan](https://github.com/teachrdan)" 火の悪魔 (Hi no akuma)
+  - __Development Superheroine__: Christine "[cyanCYMK](https://github.com/cyanCYMK)" 화재 악마 (hwajae agma)
 
 ## Table of Contents
 
@@ -23,16 +23,19 @@ Data touch feelings => insight
 
 ## Usage
 
-> Some usage instructions
+1. Clone repo
+1. [Install dependencies](#installing-dependencies)
+1. Launch server with nodemon app.js
+1. Point your mobile browser to localhost:1337
+1. Swipe feels
 
 ## Requirements
 
+- Firebase
+- Express
 - Mobile Browser that supports:
   -localStorage
   -canvas elements
-
-- Firebase (version? 0.10.x)
-- Express (version?)
 
 ## Development
 
@@ -41,17 +44,14 @@ Data touch feelings => insight
 From within the root directory:
 
 ```sh
-sudo npm install grunt-cli -g
+npm install -g bower
 bower install
 npm install
-grunt bowerInstall
-nodemon app.js
-
 ```
 
 ### Roadmap
 
-View the project roadmap [here](LINK_TO_PROJECT_ISSUES)
+View the project roadmap [here](https://github.com/fire-devil/fire-devil/issues)
 
 
 ## Contributing
