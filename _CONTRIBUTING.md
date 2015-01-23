@@ -3,6 +3,7 @@
 #TO START WORKING#
 
 1.Fork the repo
+
 2.Clone to local computer
 
 `$ git remote add upstream organization_url`
@@ -52,4 +53,3 @@ update you local master
 
 #REFERENCES#
 http://www.thumbtack.com/engineering/linear-git-history/
-
