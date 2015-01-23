@@ -8,9 +8,10 @@
 ehthumbs.db
 Thumbs.db
 
-# NPM-installed files #
-#######################
+# NPM & Bower files #
+#####################
 /node_modules/**
+/client/components/**
 
 # Sensitive info #
 ##################
