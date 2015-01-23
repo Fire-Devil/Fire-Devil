@@ -11,19 +11,18 @@ var startup = function() {
   var c = document.getElementById("canvas");
   var ctx = c.getContext("2d");
   ctx.font = "30px Arial";
-  ctx.fillText("Happy",10,50);
-  ctx.fillText("Angry",500,550);
-  ctx.fillText("Excited",500,50);
-  ctx.fillText("Sad",10,550);
-  ctx.fillText("Thumb",250,300);
+  ctx.fillText("Happy", 10, 50);
+  ctx.fillText("Angry", 500, 550);
+  ctx.fillText("Excited", 500, 50);
+  ctx.fillText("Sad", 10, 550);
+  ctx.fillText("Thumb", 250, 300);
 }
 
-var ongoingTouches = new Array();
+var ongoingTouches = [];
 
 //Create storage arrays
-// DAN: Why do we instantiate arrays with `new` like this?
-var touchesStoreX = new Array();
-var touchesStoreY = new Array();
+var touchesStoreX = [];
+var touchesStoreY = [];
 
 //Create a counter for each swipe event
 var swipeCount = 0;
@@ -40,8 +39,8 @@ var handleStart = function(evt) {
   var touches = evt.changedTouches;
 
   //empty touches storage arrays on start
-  touchesStoreX = new Array();
-  touchesStoreY = new Array();
+  touchesStoreX = [];
+  touchesStoreY = [];
 
   for (var i=0; i < touches.length; i++) {
     ongoingTouches.push(copyTouch(touches[i]));
@@ -104,7 +103,7 @@ var handleEnd = function(evt) {
 
       //On end, store the touches arrays on local storage
       //Using swipecount defined globally
-      window.localStorage[swipeCount] = JSON.stringify([touchesStoreX,touchesStoreY,moment().format('MMMM Do YYYY, h:mm:ss a')]);
+      window.localStorage[swipeCount] = JSON.stringify([touchesStoreX, touchesStoreY, moment().format('MMMM Do YYYY, h:mm:ss a')]);
       swipeCount+=1;
 
       //Print local storage
