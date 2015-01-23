@@ -13,7 +13,7 @@
 `$ git co -b feature_branch`
 
 _NAME BRANCH AFTER IT'S PURPOSE_
-work on branch....
+Work on the branch....
 
 4.Add & commit branch(dont push)
 
@@ -24,20 +24,18 @@ work on branch....
 
 `$ git pull --rebase upstream master`
 
-_if merge conflict_
-
-_resolve conflicts_
+_If there is a merge conflict, resolve the conflicts and proceed_
 
 `$git --rebase continue`
 `$git add .`
 
-_after merge conflicts resolves/no conflicts  originally_
+_After merge conflicts resolves/no conflicts  originally_
 
 `$git push origin branch`
 
 6.Github submission (see below) 
 
-update your local master
+Update your local master
 
 7.Update your local master
 `$ git pull upstream master`
