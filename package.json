@@ -1,0 +1,27 @@
+{
+  "name": "2014-12-solo",
+  "version": "1.0.0",
+  "description": "MVP",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.10.1",
+    "express": "^4.11.0"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-bower-install": "^1.6.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nsipplswezey/2014-12-solo.git"
+  },
+  "author": "Nicks",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nsipplswezey/2014-12-solo/issues"
+  },
+  "homepage": "https://github.com/nsipplswezey/2014-12-solo"
+}
