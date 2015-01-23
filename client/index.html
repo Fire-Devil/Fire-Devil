@@ -6,13 +6,13 @@
   <script src="components/jquery/dist/jquery.js"></script>
   <script src="components/moment/moment.js"></script>
   <!-- endbower -->
-  <!-- need new utils.js-type file here -->
+  <script src="util/jquery.mobile.custom.min.js"></script>
   <script src="touch.js"></script>
   <title>DataTouchFeel: Are You DTF?</title>
 </head>
 <body>
   <canvas id="canvas" width="600" height="600" style="border:solid black 1px;">
-      Your browser does not support canvas elements.
+    Your browser does not support canvas elements.
   </canvas>
 
   <p id="swipe" style="height:400px; background-color: black; color: white; font-size: 100px">Swipe for data</p>
@@ -20,7 +20,7 @@
   <script>
   $("#swipe").on("swipe", function() {
     $("#canvas").toggle();
-      printLocalStorage();
+    printLocalStorage();
   });
   </script>
   <pre id="log" style="border: 1px solid #ccc; font-size: 50px"></pre>
