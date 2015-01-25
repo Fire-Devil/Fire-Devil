@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/fire-devil/fire-devil.png?label=ready&title=Ready)](https://waffle.io/fire-devil/fire-devil)
 # Fire-Devil
 Data touch feelings => insight
 - Swipe your feelz
