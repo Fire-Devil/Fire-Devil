@@ -5,16 +5,21 @@ var swipesToDB = function(){
   // JSON.parse(localStorage[0]) is array with 3, last is date
 
   // TO DO: local storage has other stuff in it.
-  for ( var i = 0; i < localStorage.length; i++ ) {
-    console.log('about to push');
-    var swipeData = JSON.parse(window.localStorage[i]);
-    console.log('parsed');
-    userRef.push({
-      swipe1: swipeData[0],
-      swipe2: swipeData[1],
-      date: swipeData[2]
-    });
-    console.log('pushed');
+  var swipeData = JSON.parse(window.localStorage['swipeData']);
+  console.log('swipeData:', swipeData);
+
+  // pushes to db if more than 10 swipes recorded
+  if ( Object.keys(swipeData).length > 10 ) {
+    for ( var key in swipeData ) {
+      userRef.push(swipeData[key]);
+    }
+    console.log('stuff pushed');
+    window.localStorage.swipeData = JSON.stringify({});
+    console.log('localStorage.swipeData cleared')
   }
 }
-// swipesToDB();
+swipesToDB();
+
+setInterval(function(){
+  swipesToDB();
+}, 60000)
