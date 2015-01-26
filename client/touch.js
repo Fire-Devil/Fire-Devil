@@ -5,6 +5,7 @@ var startup = function() {
   el.addEventListener("touchcancel", handleCancel, false);
   el.addEventListener("touchleave", handleEnd, false);
   el.addEventListener("touchmove", handleMove, false);
+  window.localStorage.touchUser = prompt("What's your name?");
   //log("initialized.");
 
   //Put text on the canvas
@@ -25,6 +26,7 @@ var touchesStoreX = [];
 var touchesStoreY = [];
 
 //Create a counter for each swipe event
+var swipeData = {};
 var swipeCount = 0;
 var swipeSummary = {};
 
@@ -103,7 +105,9 @@ var handleEnd = function(evt) {
 
       //On end, store the touches arrays on local storage
       //Using swipecount defined globally
-      window.localStorage[swipeCount] = JSON.stringify([touchesStoreX, touchesStoreY, moment().format('MMMM Do YYYY, h:mm:ss a')]);
+
+      swipeData[swipeCount] = [touchesStoreX, touchesStoreY, moment().format('MMMM Do YYYY, h:mm:ss a')];
+      
       swipeCount+=1;
 
       //Print local storage
@@ -114,6 +118,7 @@ var handleEnd = function(evt) {
       //log("can't figure out which touch to end");
     }
   }
+  window.localStorage['swipeData'] = JSON.stringify(swipeData);
 }
 
 var handleCancel = function(evt) {
