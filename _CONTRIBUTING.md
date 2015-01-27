@@ -51,5 +51,10 @@ For example: This closes #27 and closes #5.
 
 2 people from the organization must read before a pull of lengthy or important code is accepted. 1 person only can accept code that is short or trivial.
 
+To update your origin remote master (i.e. your Github fork) after a pull request has been incorporated:
+`$ git checkout master`
+`$ git rebase upstream master`
+`$ git push origin master`
+
 #REFERENCES#
 http://www.thumbtack.com/engineering/linear-git-history/
