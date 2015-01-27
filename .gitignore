@@ -16,3 +16,8 @@ Thumbs.db
 # Sensitive info #
 ##################
 gcal_api.json
+node_modules
+dist
+.tmp
+.sass-cache
+bower_components
