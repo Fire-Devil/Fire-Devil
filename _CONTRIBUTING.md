@@ -53,7 +53,7 @@ For example: This closes #27 and closes #5.
 
 To update your origin remote master (i.e. your Github fork) after a pull request has been incorporated:
 `$ git checkout master`
-`$ git rebase upstream master`
+`$ git pull --rebase upstream master`
 `$ git push origin master`
 
 #REFERENCES#
