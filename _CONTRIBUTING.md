@@ -42,8 +42,9 @@ Update your local master.
 
 `$ git pull upstream development`
 
-_if pull requests have been accepted to developent while yours
+_if pull requests have been accepted to development while yours
 was pending, please repeat step 5 to sync your fork with fire-devil developent branch_
+
 To start working on next feature
 
 8.Go to step 4.
