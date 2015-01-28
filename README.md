@@ -56,5 +56,5 @@ View the project roadmap [here](https://github.com/fire-devil/fire-devil/issues)
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
+See [_CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
 See [STYLEGUIDE.md](STYLEGUIDE.md) for the project's style manual.
