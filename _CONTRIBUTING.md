@@ -47,6 +47,7 @@ Update your local master
 Go to GitHub and send pull request to the fire-devil organization branch.
 
 Please reference in the pull request comment the corresponding issue using the [supported keywords](https://help.github.com/articles/closing-issues-via-commit-messages/).
+For example: This closes #27 and closes #5.
 
 2 people from the organization must read before a pull of lengthy or important code is accepted. 1 person only can accept code that is short or trivial.
 
