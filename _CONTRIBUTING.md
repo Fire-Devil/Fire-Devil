@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ##Git Work Flow##
 
 #To Start Working
@@ -117,4 +116,3 @@ For example: This closes #27 and closes #5.
 #References
 
 http://www.thumbtack.com/engineering/linear-git-history/
->>>>>>> Minor editing to README, STYLEGUIDE and CONTRIBUTING (git workflow)
