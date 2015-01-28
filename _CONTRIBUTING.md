@@ -1,12 +1,13 @@
 ##Git Work Flow##
 
+
 #To Start Working
 
 1.Fork the repo.
 
 2.Clone to local computer.
 
-`$ git remote add upstream organization_url`
+`$ git remote add upstream https://github.com/Fire-Devil/Fire-Devil/`
 
 3.From  master, checkout feature_branch.
 
@@ -19,16 +20,19 @@ Name branch after its purpose and work on the branch...
 `$git add .`
 `$git commit -m 'short description of changes made'`
 
-5.Add upstream commits to feature branch.
+5.Add upstream commits to feature branch (make sure you are on feature branch).
 
-`$ git pull --rebase upstream master`
+`$ git pull --rebase upstream development`
 
 _If there is a merge conflict, resolve the conflicts and proceed._
 
 `$git --rebase continue`
 `$git add .`
 
+
 _After merge conflicts resolves/no conflicts originally._
+
+_if your fork is o_
 
 `$git push origin branch`
 
@@ -38,8 +42,10 @@ Update your local master.
 
 7.Update your local master.
 
-`$ git pull upstream master`
+`$ git pull upstream development`
 
+_if pull requests have been accepted to developent while yours
+was pending, please repeat step 5 to sync your fork with fire-devil developent branch_
 To start working on next feature
 
 8.Go to step 4.
