@@ -57,7 +57,7 @@ For example: 'This closes #27 and closes #5.'
 #References
 
 http://www.thumbtack.com/engineering/linear-git-history/
-=======
+
 ##Git Work Flow##
 
 #To Start Working
