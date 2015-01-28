@@ -1,15 +1,16 @@
 # Fire-Devil
-Data touch feelings => insight
+
+Data Touch Teelings => Insight
 - Swipe your feelz
 - See your feelz
 - Know your feelz
 
 ## Team
 
-  - __Product Owner__: Nick "[nsipplswezey](https://github.com/nsipplswezey)" diablo fuego
-  - __Scrum Master__: Tole "[tliber](https://github.com/tliber)" огонь дьявол (ogon' d'yavol)
-  - __Development Superhero__: Dan "[teachrdan](https://github.com/teachrdan)" 火の悪魔 (Hi no akuma)
-  - __Development Superheroine__: Christine "[cyanCYMK](https://github.com/cyanCYMK)" 화재 악마 (hwajae agma)
+  - __Product Owner__: Nick "[@nsipplswezey](https://github.com/nsipplswezey)" diablo fuego
+  - __Scrum Master__: Tole "[@tliber](https://github.com/tliber)" огонь дьявол (ogon' d'yavol)
+  - __Development Superhero__: Dan "[@teachrdan](https://github.com/teachrdan)" 火の悪魔 (hi no akuma)
+  - __Development Superheroine__: Christine "[@cyanCYMK](https://github.com/cyanCYMK)" 화재 악마 (hwajae agma)
 
 ## Table of Contents
 
@@ -51,9 +52,9 @@ npm install
 
 ### Roadmap
 
-View the project roadmap [here](https://github.com/fire-devil/fire-devil/issues)
-
+View the project roadmap [here](https://github.com/fire-devil/fire-devil/issues).
 
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
+See [STYLEGUIDE.md](STYLEGUIDE.md) for the project's style manual.
