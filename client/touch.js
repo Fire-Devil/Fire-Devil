@@ -66,9 +66,9 @@ var handleMove = function(evt) {
     var idx = ongoingTouchIndexById(touches[i].identifier);
 
     if (idx >= 0) {
-      //store touches to array on movement
-      touchesStoreX.push(ongoingTouches[idx].pageX);
-      touchesStoreY.push(ongoingTouches[idx].pageY);
+      //store touches to array on movement (as integer values)
+      touchesStoreX.push(Math.floor(ongoingTouches[idx].pageX));
+      touchesStoreY.push(Math.floor(ongoingTouches[idx].pageY));
 
       ctx.beginPath();
       //log("ctx.moveTo("+ongoingTouches[idx].pageX+", "+ongoingTouches[idx].pageY+");");
@@ -103,10 +103,9 @@ var handleEnd = function(evt) {
       ctx.beginPath();
       ctx.moveTo(ongoingTouches[idx].pageX, ongoingTouches[idx].pageY);
 
-      //On end, store the touches arrays on local storage
+      //On end, store the touches arrays on local storage, with UTC as the 3rd array value
       //Using swipecount defined globally
-
-      swipeData[swipeCount] = [touchesStoreX, touchesStoreY, moment().format('MMMM Do YYYY, h:mm:ss a')];
+      swipeData[swipeCount] = [touchesStoreX, touchesStoreY, new Date().getTime()];
       
       swipeCount+=1;
 
