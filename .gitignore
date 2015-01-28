@@ -12,7 +12,12 @@ Thumbs.db
 #####################
 /node_modules/**
 /client/components/**
-
+/app/bower_components/**
 # Sensitive info #
 ##################
 gcal_api.json
+node_modules
+dist
+.tmp
+.sass-cache
+bower_components
