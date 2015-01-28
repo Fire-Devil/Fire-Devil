@@ -31,7 +31,6 @@ angular.module('fireDevilApp')
    		})
 
    	})
-    
    //  $scope.data.$on('loaded', function(){
    //   console.log('On 29')
 
