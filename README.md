@@ -56,5 +56,9 @@ View the project roadmap [here](https://github.com/fire-devil/fire-devil/issues)
 
 ## Contributing
 
+<<<<<<< HEAD
 See [_CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
+=======
+See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
+>>>>>>> Fixed merge conflict.
 See [STYLEGUIDE.md](STYLEGUIDE.md) for the project's style manual.
