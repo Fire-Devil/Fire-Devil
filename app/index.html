@@ -32,10 +32,10 @@
       </div>
 
   <div id="datavis" ng-controller="UserDataCtrl">
-    {{originalUserStorage}}
-    <!-- <li ng-repeat="(key, val) in orderedStorage">
+    <li ng-repeat="(key, value) in userSwipes">
+    {{key}}: {{userSwipes[key]['mood']}}
+    <li ng-repeat="(key, value) in userSwipes[key]['mood']">
       {{key}}
-    </li> -->
   </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->

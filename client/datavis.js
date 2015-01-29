@@ -91,8 +91,8 @@ var countStrokes = function(obj) {
     var lastVal1 = user[innerKey][1].length - 1;
 
     // Calculate the difference in x and y values in swipes.
-    var dx = user[innerKey][0][lastVal0] - user[innerKey][0][0]
-    var dy = user[innerKey][1][lastVal1] - user[innerKey][1][1]
+    var dx = user[innerKey][0][lastVal0] - user[innerKey][0][0];
+    var dy = user[innerKey][1][lastVal1] - user[innerKey][1][1];
 
     // Use the difference in x and y values to calculate which direction
     // the user swiped in, and determine the feels as a result.
