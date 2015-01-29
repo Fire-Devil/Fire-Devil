@@ -21,3 +21,4 @@ dist
 .tmp
 .sass-cache
 bower_components
+auth.js
