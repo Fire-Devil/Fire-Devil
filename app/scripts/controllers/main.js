@@ -17,7 +17,8 @@ angular.module('fireDevilApp')
       'Karma'
     ];
   	var ref = new Firebase("https://fire-devil.firebaseio.com/christine");
-  	// create an AngularFire reference to the data
+  	
+    // create an AngularFire reference to the data
     var sync = $firebase(ref).$asObject();
     // download the data into a local object
     // console.log('before on loaded')
