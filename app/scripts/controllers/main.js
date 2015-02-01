@@ -8,7 +8,7 @@
  * Controller of the fireDevilApp
  */
 angular.module('fireDevilApp')
-  .controller('MainCtrl',['$scope', '$firebase', 
+  .controller('MainCtrl',['$scope', '$firebase',
   	function ($scope, $firebase) {
     //came with the yoeman, package
     $scope.awesomeThings = [
@@ -17,7 +17,7 @@ angular.module('fireDevilApp')
       'Karma'
     ];
   	var ref = new Firebase("https://fire-devil.firebaseio.com/christine");
-  	
+
     // create an AngularFire reference to the data
     var sync = $firebase(ref).$asObject();
     // download the data into a local object
@@ -37,9 +37,9 @@ angular.module('fireDevilApp')
 
    //  // if( sync.hasOwnProperty('christine') ) {
    //    // note that we just grab it by key; not $child!
-   //    // var userRecord = usersRef[userId]; 
+   //    // var userRecord = usersRef[userId];
    //   console.log(Object.keys($scope.data))
-   	
+
    // })
 
     // console.dir($scope.data)

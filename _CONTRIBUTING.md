@@ -32,7 +32,6 @@ _If there is a merge conflict, resolve the conflicts and proceed._
 
 _After merge conflicts resolves/no conflicts originally._
 
-
 `$git push origin branch`
 
 6.Github submission. (see below)

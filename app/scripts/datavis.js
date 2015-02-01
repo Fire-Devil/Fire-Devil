@@ -1,9 +1,5 @@
 firebaseRef = new Firebase('https://fire-devil.firebaseio.com/');
 
-var test = function(val) {
-  console.log(val);
-};
-
 // Creating global objects to store user data
 var originalUserStorage = {};
 var orderedStorage = {};
@@ -36,7 +32,7 @@ var orderData = function(obj) {
       orderedStorage[key][date] = coordinates;
     }
   }
-  // console.log('orderedStorage', orderedStorage);
+  console.log('orderedStorage', orderedStorage);
   return orderedStorage;
 };
 
@@ -91,8 +87,8 @@ var countStrokes = function(obj) {
     var lastVal1 = user[innerKey][1].length - 1;
 
     // Calculate the difference in x and y values in swipes.
-    var dx = user[innerKey][0][lastVal0] - user[innerKey][0][0];
-    var dy = user[innerKey][1][lastVal1] - user[innerKey][1][1];
+    var dx = user[innerKey][0][lastVal0] - user[innerKey][0][0]
+    var dy = user[innerKey][1][lastVal1] - user[innerKey][1][1]
 
     // Use the difference in x and y values to calculate which direction
     // the user swiped in, and determine the feels as a result.
@@ -106,7 +102,7 @@ var countStrokes = function(obj) {
       strokes[key]['angry'] += 1;
     }
   }
-  // console.log('strokes', strokes);
+  console.log('strokes', strokes);
   return strokes;
 };
 
