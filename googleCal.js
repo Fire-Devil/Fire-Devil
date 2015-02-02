@@ -34,7 +34,7 @@ if(process.env.clientSecret){
 passport.serializeUser(function(user, done) {
   done(null, user);
 });
-//used to deserialize user
+//used to deserialize user session
 passport.deserializeUser(function(user, done) {
   done(null, user);
 });
