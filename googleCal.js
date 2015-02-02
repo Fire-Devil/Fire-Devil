@@ -48,6 +48,7 @@ passport.use(new GoogleStrategy({
     //instantiate new calendar of logged user
     google_calendar = new gcal.GoogleCalendar(token);
     var currentUser = profile.displayName;
+
     //makes a new firebase directory for the user
 
     //google api function to list calendars of user
