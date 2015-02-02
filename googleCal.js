@@ -45,9 +45,6 @@ passport.use(new GoogleStrategy({
   callbackURL : auth['callbackURL']
   },
   function(token, refreshToken, profile, done) {
-    console.log('token  ', token);
-    console.log('refffToken', refreshToken)
-    console.log('DONE', done)
     //instantiate new calendar of logged user
     google_calendar = new gcal.GoogleCalendar(token);
     var currentUser = profile.displayName;
