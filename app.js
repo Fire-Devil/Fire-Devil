@@ -13,7 +13,7 @@ app.use('/swipez',express.static(__dirname + '/client'));
 app.use('/data-view',express.static(__dirname +'/app'));
 
 app.get('/', function(req, res) {
-  res.redirect('/login');
+  res.sendfile(__dirname + '/app/views/main.html');
 });
 
 //asks google for permissions of specific items defined in scopes
@@ -33,7 +33,7 @@ app.use('google-cal',express.static(__dirname + '/google-cal'));
 app.get('/data-view/callback',
   passport.authenticate('google', { failureRedirect: '/data-view' }),
   function(req, res) {
-    res.redirect('/data-view');
+    res.redirect('/swipez');
   });
   //DOES NOT WORK, issue #63 in waffle.io
   app.get('/logout', function(req, res) {
