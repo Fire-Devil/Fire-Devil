@@ -27,7 +27,7 @@ Data Touch Feelings => Insight
 1. Clone repo
 1. [Install dependencies](#installing-dependencies)
 1. Launch server with *nodemon app.js*
-1. Point mobile browser to *localhost:1337*
+1. Point mobile browser to *localhost:8000*
 1. Swipe feelz
 
 ## Requirements
