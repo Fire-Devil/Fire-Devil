@@ -1,6 +1,8 @@
 var swipesToDB = function(){
   var firebaseRef = new Firebase('https://fire-devil.firebaseio.com/');
+  // var swipesRef = firebaseRef.child('swipeData');
   var userRef = firebaseRef.child(window.localStorage.touchUser);
+  var swipesRef = userRef.child('swipeData');
   // localStorage is JSON object with numbered index for each swipe
   // JSON.parse(localStorage[0]) is array with 3, last is date
 
@@ -11,11 +13,11 @@ var swipesToDB = function(){
   // pushes to db if more than 10 swipes recorded
   if ( Object.keys(swipeData).length > 10 ) {
     for ( var key in swipeData ) {
-      userRef.push(swipeData[key]);
+      swipesRef.push(swipeData[key]);
     }
     console.log('stuff pushed');
     window.localStorage.swipeData = JSON.stringify({});
-    console.log('localStorage.swipeData cleared')
+    console.log('localStorage.swipeData cleared');
   }
 }
 // swipesToDB();
