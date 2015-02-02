@@ -11,7 +11,7 @@ var swipesToDB = function(){
   console.log('swipeData:', swipeData);
 
   // pushes to db if more than 10 swipes recorded
-  if ( Object.keys(swipeData).length > 10 ) {
+  if ( Object.keys(swipeData).length > 3 ) {
     for ( var key in swipeData ) {
       swipesRef.push(swipeData[key]);
     }
@@ -26,4 +26,4 @@ var swipesToDB = function(){
 // otherwise, line 3 where userRef is defined could error
 setInterval(function(){
   swipesToDB();
-}, 60000)
+}, 5000)
