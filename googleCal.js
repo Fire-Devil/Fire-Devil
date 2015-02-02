@@ -6,7 +6,22 @@ var Promise = require('bluebird');
 var Firebase = require('firebase');
 var ref = new Firebase("https://fire-devil.firebaseio.com/");
 //reminder to put into secret cofig file
-var auth = require('./auth');
+
+
+if(process.env.clientSecret){
+  //If the app is deployed, there will be a process.env.clientSecret variable
+  //And we'll use the heroku server environment variables
+  var auth = {}
+  auth['clientID'] = process.env.clientID,
+  auth['clientSecret'] = process.env.clientSecret,
+  auth['callbackURL'] = process.env.callbackURL
+
+} else {
+  //Otherwise we're working with our local version, and a auth.js file is required
+  //We can give you the auth.js file with the correct credentials.
+  var auth = require('./auth');
+}
+
 
 //neccesary passport functions
 passport.serializeUser(function(user, done) {
@@ -16,7 +31,7 @@ passport.serializeUser(function(user, done) {
 passport.deserializeUser(function(user, done) {
   done(null, user);
 });
-//secret access information which allows protects users from CSFR 
+//secret access information which allows protects users from CSFR
 passport.use(new GoogleStrategy({
   clientID : auth['clientID'],
   clientSecret : auth['clientSecret'],
@@ -43,7 +58,7 @@ passport.use(new GoogleStrategy({
         var getStableData = function(cb) {
           for (var eve in calendarList.items) {
             if (calendarList.items[eve]['summary'] != undefined) {
-              (function(eve) { 
+              (function(eve) {
                 calendarInfo[eve] = {};
                 var happening = calendarList.items[eve]['summary'];
                 calendarInfo[eve]['event'] = happening;
@@ -59,7 +74,7 @@ passport.use(new GoogleStrategy({
           cb();
         };
         //uploads data to firebase
-        getStableData(function() { 
+        getStableData(function() {
           var usersRef = ref.child(currentUser);
           usersRef.set(calendarInfo);
         });
