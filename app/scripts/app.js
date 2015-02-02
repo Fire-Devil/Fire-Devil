@@ -38,7 +38,7 @@ var fireDevil = angular.module('fireDevilApp', ['firebase'])
 
     // Helper function for counting swipes.
     var countStrokes = function(userObj, userName) {
-      // Create empty object for each user in userSwipes.
+      // Create empty object for each user in userSwipes.s
       if (userSwipes[userName] === undefined) {
         userSwipes[userName] = {
           utc: undefined,
@@ -70,13 +70,14 @@ var fireDevil = angular.module('fireDevilApp', ['firebase'])
         for (var key in record) {
           if (key[0] !== '$' && key !== 'forEach') {
             originalUserStorage[key] = record[key];
+            console.log('originalUserStorage:', originalUserStorage);
           }
         }
       })
       // Using promises to prepare the userSwipes object for population.
       .then(function() {
         for (var key in originalUserStorage) {
-          countStrokes(originalUserStorage[key], key);
+          countStrokes(originalUserStorage[key]['swipeData'], key);
         }
         console.log('userSwipes', userSwipes);
         $scope.userSwipes = userSwipes;
