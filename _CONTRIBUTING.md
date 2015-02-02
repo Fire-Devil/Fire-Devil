@@ -7,20 +7,20 @@
 
 2.Clone to local computer.
 
+3.Add upstream remote
+
 `$ git remote add upstream https://github.com/Fire-Devil/Fire-Devil/`
 
-3.From  master, checkout feature_branch.
+4.From your local master, checkout a feature_branch to develop on. Name branch after its purpose and work on the branch...
 
 `$ git co -b feature_branch`
 
-Name branch after its purpose and work on the branch...
-
-4.Add and commit branch. (don't push)
+5.Add and commit to your feature branch. (don't push)
 
 `$git add .`
 `$git commit -m 'short description of changes made'`
 
-5.Add upstream commits to feature branch (make sure you are on feature branch).
+6.Add upstream commits to feature branch (make sure you are on feature branch).
 
 `$ git pull --rebase upstream development`
 
@@ -29,9 +29,7 @@ _If there is a merge conflict, resolve the conflicts and proceed._
 `$git --rebase continue`
 `$git add .`
 
-
 _After merge conflicts resolves/no conflicts originally._
-
 
 `$git push origin branch`
 
