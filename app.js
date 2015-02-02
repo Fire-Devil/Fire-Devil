@@ -28,7 +28,7 @@ app.get('/data-view/callback',
   function(req, res) {
     res.redirect('/data-view');
   });
-  //DOES NOT WORK, issue in waffle.io
+  //DOES NOT WORK, issue #63 in waffle.io
   app.get('/logout', function(req, res) {
     req.logout();
     res.redirect('/');

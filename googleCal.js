@@ -65,19 +65,19 @@ passport.use(new GoogleStrategy({
         //when the project  is scaled
         var getStableData = function(cb) {
           //'eve' refers to the index number in calendarList.items
-          for (var eve in calendarList.items) {
-            if (calendarList.items[eve]['summary'] != undefined) {
-              (function(eve) {
-                calendarInfo[eve] = {};
-                var happening = calendarList.items[eve]['summary'];
-                calendarInfo[eve]['event'] = happening;
+          for (var calendarEvent in calendarList.items) {
+            if (calendarList.items[calendarEvent]['summary'] != undefined) {
+              (function(calendarEvent) {
+                calendarInfo[calendarEvent] = {};
+                var happening = calendarList.items[calendarEvent]['summary'];
+                calendarInfo[calendarEvent]['event'] = happening;
                 calendarInfo.happening = happening;
-                calendarInfo[eve]['start'] = calendarList.items[eve]['start'];
-                calendarInfo[eve]['end'] = calendarList.items[eve]['end'];
-                if (calendarList.items[eve]['recurrence']) {
-                  calendarInfo[eve]['recurrence'] = calendarList.items[eve]['recurrence']
+                calendarInfo[calendarEvent]['start'] = calendarList.items[calendarEvent]['start'];
+                calendarInfo[calendarEvent]['end'] = calendarList.items[calendarEvent]['end'];
+                if (calendarList.items[calendarEvent]['recurrence']) {
+                  calendarInfo[calendarEvent]['recurrence'] = calendarList.items[calendarEvent]['recurrence']
                 }
-              })(eve);
+              })(calendarEvent);
             }
           }
           cb();
@@ -90,7 +90,6 @@ passport.use(new GoogleStrategy({
         });
       });
     });
-    
     //at the end of the event loop call the inner callback 
     //http://nodejs.org/api/process.html
     process.nextTick(function() {
