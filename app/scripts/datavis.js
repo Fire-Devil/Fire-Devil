@@ -8,6 +8,7 @@ var orderedStorage = {};
 firebaseRef.on('value',
   function(snapshot) {
     originalUserStorage = snapshot.val();
+    console.log('originalUserStorage:', originalUserStorage);
   }, function(error) {
   console.log('error', error);
 });
