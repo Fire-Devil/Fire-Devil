@@ -34,6 +34,19 @@ _After merge conflicts resolves/no conflicts originally._
 
 `$git push origin branch`
 
+Note: If the 'origin branch' was pushed prior to rebasing, you may need to use `git push origin branch -f` after rebasing to force the git push.
+
+Example of the error:
+```
+https://github.com/cyanCYMK/Fire-Devil.git
+ ! [rejected]        issue56 -> issue56 (non-fast-forward)
+error: failed to push some refs to 'https://github.com/cyanCYMK/Fire-Devil.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+
 6.Github submission. (see below)
 
 Update your local master.
