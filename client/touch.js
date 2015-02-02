@@ -30,6 +30,9 @@ var swipeData = {};
 var swipeCount = 0;
 var swipeSummary = {};
 
+// Get user name to correlate with swipeData
+
+
 window.onload = function() {
   startup();
 };
@@ -204,9 +207,4 @@ var printLocalStorage = function() {
       log("SAD :( at " + swipe[2]);
     }
   }
-
-  console.log(swipeSummary[0]);
-  console.log(swipeSummary[1]);
-  console.log(swipeSummary[2]);
-  console.log(swipeSummary[3]);
-}
+};

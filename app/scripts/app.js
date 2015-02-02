@@ -38,7 +38,7 @@ var fireDevil = angular.module('fireDevilApp', ['firebase'])
 
     // Helper function for counting swipes.
     var countStrokes = function(userObj, userName) {
-      // Create empty object for each user in userSwipes.s
+      // Create empty object for each user in userSwipes.
       if (userSwipes[userName] === undefined) {
         userSwipes[userName] = {
           utc: undefined,
