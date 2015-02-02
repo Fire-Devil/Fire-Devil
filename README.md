@@ -1,6 +1,6 @@
-# Fire-Devil
+# Data Touch Feelings
 
-Data Touch Teelings => Insight
+Data Touch Feelings => Insight
 - Swipe your feelz
 - See your feelz
 - Know your feelz
@@ -26,17 +26,17 @@ Data Touch Teelings => Insight
 
 1. Clone repo
 1. [Install dependencies](#installing-dependencies)
-1. Launch server with nodemon app.js
-1. Point your mobile browser to localhost:1337
-1. Swipe feels
+1. Launch server with *nodemon app.js*
+1. Point mobile browser to *localhost:1337*
+1. Swipe feelz
 
 ## Requirements
 
 - Firebase
 - Express
 - Mobile Browser that supports:
-  -localStorage
-  -canvas elements
+  - localStorage
+  - canvas elements
 
 ## Development
 
@@ -56,6 +56,6 @@ View the project roadmap [here](https://github.com/fire-devil/fire-devil/issues)
 
 ## Contributing
 
-See [_CONTRIBUTING.md](_CONTRIBUTING.md) for contribution guidelines.
+- See [_CONTRIBUTING.md](_CONTRIBUTING.md) for contribution guidelines.
 
-See [STYLEGUIDE.md](STYLEGUIDE.md) for the project's style manual.
+- See [STYLEGUIDE.md](STYLEGUIDE.md) for the project's style manual.
