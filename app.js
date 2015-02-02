@@ -36,8 +36,11 @@ app.get('/data-view/callback',
   });
 
 
-app.set('port', (process.env.PORT || 1337));
-console.log('listening on 8000');
+app.set('port', (process.env.PORT || 8000));
+
+app.listen(app.get('port'), function() {
+  console.log("Node app is running at localhost:" + app.get('port'));
+});
 
 var ensureAuthenticated = function(req, res, next) {
   if (req.isAuthenticated()) { return next(); }
