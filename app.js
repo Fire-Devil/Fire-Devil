@@ -2,12 +2,19 @@ var express = require('express');
 var app = require('./server/server.js');
 var googleCal = require('./googleCal.js');
 var passport = require('passport');
+
+// app.use('/',express.static(__dirname + '/client'));
+// app.use(express.static(__dirname + '/client'));
+
 app.use(passport.initialize());
 app.use(passport.session());
-app.use('/',express.static(__dirname + '/client'));
-app.use(express.static(__dirname + '/client'));
+app.use('/swipez',express.static(__dirname + '/client'));
+
 app.use('/data-view',express.static(__dirname +'/app'));
 
+app.get('/', function(req, res) {
+  res.redirect('/login');
+});
 
 //asks google for permissions of specific items defined in scopes
 app.get('/login',
