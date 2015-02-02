@@ -4,7 +4,13 @@ var gcal = require('google-calendar');
 //refactor to promises later
 var Promise = require('bluebird');
 var Firebase = require('firebase');
-var ref = new Firebase("https://fire-devil.firebaseio.com/");
+
+// Firebase database is structured:
+//   user
+//     - swipeData
+//     - calendarData
+var ref = new Firebase('https://fire-devil.firebaseio.com/');
+
 //reminder to put into secret cofig file
 
 
@@ -75,8 +81,9 @@ passport.use(new GoogleStrategy({
         };
         //uploads data to firebase
         getStableData(function() {
-          var usersRef = ref.child(currentUser);
-          usersRef.set(calendarInfo);
+          var userRef = ref.child(currentUser);
+          var calendarRef = userRef.child('calendarData');
+          calendarRef.set(calendarInfo);
         });
       });
     });
