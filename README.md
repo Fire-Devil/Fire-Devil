@@ -40,6 +40,9 @@ Data Touch Feelings => Insight
 
 ## Development
 
+###auth.js
+ to boot up the server locally, use must have the `auth.js` in your root folder,
+ for access to this file email toleliberman@gmail.com
 ### Installing Dependencies
 
 From within the root directory:

@@ -1,10 +1,9 @@
 var express = require('express');
 var app = require('./server/server.js');
-var googleCal = require('./googleCal.js')
-var passport = require('passport')
-
-app.use(passport.initialize())
-app.use(passport.session())
+var googleCal = require('./googleCal.js');
+var passport = require('passport');
+app.use(passport.initialize());
+app.use(passport.session());
 app.use('/',express.static(__dirname + '/client'));
 app.use(express.static(__dirname + '/client'));
 app.use('/data-view',express.static(__dirname +'/app'));
@@ -12,11 +11,11 @@ app.use('/data-view',express.static(__dirname +'/app'));
 
 //asks google for permissions of specific items defined in scopes
 app.get('/login',
-  passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/userinfo.profile',
-                                            'https://www.googleapis.com/auth/userinfo.email',
-                                            'https://www.googleapis.com/auth/calendar.readonly'] }),
+  passport.authenticate('google', 
+    { scope: ['https://www.googleapis.com/auth/userinfo.profile',
+              'https://www.googleapis.com/auth/userinfo.email',
+              'https://www.googleapis.com/auth/calendar.readonly'] }),
   function(req, res){
-    console.log('inside passport function')
     // The request will be redirected to Google for authentication, so this
     // function will not be called.
   });
@@ -29,7 +28,7 @@ app.get('/data-view/callback',
   function(req, res) {
     res.redirect('/data-view');
   });
-  //does work fix later
+  //DOES NOT WORK, issue #63 in waffle.io
   app.get('/logout', function(req, res) {
     req.logout();
     res.redirect('/');
@@ -42,7 +41,3 @@ app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'));
 });
 
-var ensureAuthenticated = function(req, res, next) {
-  if (req.isAuthenticated()) { return next(); }
-  res.redirect('/login');
-}
