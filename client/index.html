@@ -1,32 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf=8">
-  <link rel="stylesheet" href="bootstrap.css" />
+    <head>
+        <meta charset="utf=8">
+        <link rel="stylesheet" href="bootstrap.css" />
 
-  <!-- bower:js -->
-  <!-- endbower -->
-  <!-- firebase -->
-  <script src="https://cdn.firebase.com/js/client/2.1.1/firebase.js"></script>
-  
-  <script src="touch.js"></script>
-  <script src="db.js"></script>
-  <title>DataTouchFeel: Are You DTF?</title>
-</head>
-<body>
-  <div class="header">
-    <ul class="nav nav-pills pull-right">
-      <li><a href="/login">Login</a></li>
-      <li><a href="/data-view">Data View</a></li>
-      <li><a href="/logout">Logout</a></li>
-    </ul>
-  </div>
-  <canvas id="canvas" width="600" height="600" style="border:solid black 1px;">
-    Your browser does not support canvas elements.
-  </canvas>
+        <!-- bower:js -->
+        <!-- endbower -->
+        <!-- firebase -->
+        <script src="https://cdn.firebase.com/js/client/2.1.1/firebase.js"></script>
+        <script src="util/jquery.js"></script>
+
+        <script src="touch.js"></script>
+        <script src="db.js"></script>
+        <title>DataTouchFeel: Are You DTF?</title>
+    </head>
+    <body>
+        <div class="header">
+            <ul class="nav nav-pills pull-right">
+                <li><a href="/login">Login</a></li>
+                <li><a href="/data-view">Data View</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </div>
+
+        <div class="encouragement"></div>
+
+        <script>
+            $(document).ready(function(){
+                console.log("Ready!")
+                var latestSwipeCount = Object.keys(JSON.parse(localStorage.swipeData)).length;
+
+
+                var currentSwipeCount = 0;
+
+                $("#canvas").on("touchend",function(){
+                    var latestSwipeCount = Object.keys(JSON.parse(localStorage.swipeData)).length;
+                    var encouragement = {
+                        0 : "<p>" + latestSwipeCount + " feels! So down to feel!</p>",
+                        1 : "<p>" + latestSwipeCount + " feels! Wow! Such feels!</p>",
+                        2 : "<p>" + latestSwipeCount + " feels! Much feeling! So touch!</p>",
+                        3 : "<p>" + latestSwipeCount + " feels! So data!</p>",
+                        4 : "<p>" + latestSwipeCount + " feels! Much feels!</p>",
+                        5 : "<p>" + latestSwipeCount + " feels! Such touch!</p>",
+                        6 : "<p>" + latestSwipeCount + " feels! Such DataTouchFeel!</p>",
+                        7 : "<p>" + latestSwipeCount + " feels! Such down to feel! So data!</p>",
+                        8 : "<p>" + latestSwipeCount + " feels! Such down to feel! So data!</p>",
+                    };
+
+                    if((currentSwipeCount + (Math.random() * 10)) < latestSwipeCount) {
+                        $(".encouragement").append(encouragement[Math.floor(Math.random() * 8)]);
+                        currentSwipeCount = Object.keys(JSON.parse(localStorage.swipeData)).length;
+                    }
+
+                    if(latestSwipeCount > 10){
+                        $("p").css({"font-size":"150%"})
+                    }
+                    if(latestSwipeCount > 20){
+                        $("p").css({"font-size":"170%"})
+                    }
+                    if(latestSwipeCount > 30){
+                        $("p").css({"font-size":"200%"})
+                    }
+                    if(latestSwipeCount > 40){
+                        $("p").css({"font-size":"220%"})
+                    }
+                    if(latestSwipeCount > 45){
+                        $("p").css({"font-size":"240%"})
+                    }
+                    if(latestSwipeCount > 50){
+                        $("p").css({"font-size":"250%"})
+                    }
+                    if(latestSwipeCount > 60){
+                        alert("So much feels! Go see your data by clicking Data View!")
+                    }
+                });
+            })
+
+        </script>
 
 
 
-  <pre id="log" style="border: 1px solid #ccc; font-size: 50px"></pre>
-</body>
+
+        <canvas id="canvas" width="600" height="600" style="border:solid black 1px; bottom:0; right:0; position:fixed; ">
+            Your browser does not support canvas elements.
+        </canvas>
+
+    </body>
 </html>

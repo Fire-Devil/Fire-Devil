@@ -11,10 +11,10 @@ var startup = function() {
   //Put text on the canvas
   var c = document.getElementById("canvas");
   var ctx = c.getContext("2d");
-  ctx.font = "30px Arial";
+  ctx.font = "40px Arial";
   ctx.fillText("Happy", 10, 50);
-  ctx.fillText("Angry", 500, 550);
-  ctx.fillText("Excited", 500, 50);
+  ctx.fillText("Angry", 450, 550);
+  ctx.fillText("Excited", 450, 50);
   ctx.fillText("Sad", 10, 550);
   ctx.fillText("Thumb", 250, 300);
 }
@@ -38,6 +38,7 @@ window.onload = function() {
 };
 
 var handleStart = function(evt) {
+
   evt.preventDefault();
   var el = document.getElementsByTagName("canvas")[0];
   var ctx = el.getContext("2d");
@@ -51,7 +52,8 @@ var handleStart = function(evt) {
     ongoingTouches.push(copyTouch(touches[i]));
     var color = colorForTouch(touches[i]);
     ctx.beginPath();
-    ctx.arc(touches[i].pageX, touches[i].pageY, 4, 0,2*Math.PI, false);  // a circle at the start
+    console.log("STARTED! " + el.offsetLeft);
+    ctx.arc(touches[i].pageX - el.offsetLeft, touches[i].pageY - el.offsetTop, 4, 0,2*Math.PI, false);  // a circle at the start
     ctx.fillStyle = color;
     ctx.fill();
   }
@@ -70,14 +72,14 @@ var handleMove = function(evt) {
 
     if (idx >= 0) {
       //store touches to array on movement (as integer values)
-      touchesStoreX.push(Math.floor(ongoingTouches[idx].pageX));
-      touchesStoreY.push(Math.floor(ongoingTouches[idx].pageY));
+      touchesStoreX.push(Math.floor(ongoingTouches[idx].pageX - el.offsetLeft));
+      touchesStoreY.push(Math.floor(ongoingTouches[idx].pageY - el.offsetTop));
 
       ctx.beginPath();
       //log("ctx.moveTo("+ongoingTouches[idx].pageX+", "+ongoingTouches[idx].pageY+");");
-      ctx.moveTo(ongoingTouches[idx].pageX, ongoingTouches[idx].pageY);
+      ctx.moveTo(ongoingTouches[idx].pageX - el.offsetLeft, ongoingTouches[idx].pageY - el.offsetTop);
       //log("ctx.lineTo("+touches[i].pageX+", "+touches[i].pageY+");");
-      ctx.lineTo(touches[i].pageX, touches[i].pageY);
+      ctx.lineTo(touches[i].pageX - el.offsetLeft, touches[i].pageY - el.offsetTop);
       ctx.lineWidth = 4;
       ctx.strokeStyle = color;
       ctx.stroke();
@@ -104,17 +106,17 @@ var handleEnd = function(evt) {
       ctx.lineWidth = 4;
       ctx.fillStyle = color;
       ctx.beginPath();
-      ctx.moveTo(ongoingTouches[idx].pageX, ongoingTouches[idx].pageY);
+      ctx.moveTo(ongoingTouches[idx].pageX - el.offsetLeft, ongoingTouches[idx].pageY - el.offsetTop);
 
       //On end, store the touches arrays on local storage, with UTC as the 3rd array value
       //Using swipecount defined globally
       swipeData[swipeCount] = [touchesStoreX, touchesStoreY, new Date().getTime()];
-      
+
       swipeCount+=1;
 
       //Print local storage
-      ctx.lineTo(touches[i].pageX, touches[i].pageY);
-      ctx.fillRect(touches[i].pageX-4, touches[i].pageY-4, 8, 8);  // and a square at the end
+      ctx.lineTo(touches[i].pageX - el.offsetLeft , touches[i].pageY - el.offsetTop);
+      ctx.fillRect(touches[i].pageX-4 - el.offsetLeft, touches[i].pageY-4 - el.offsetTop, 8, 8);  // and a square at the end
       ongoingTouches.splice(idx, 1);  // remove it; we're done
     } else {
       //log("can't figure out which touch to end");
